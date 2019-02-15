@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".ui.WearTimePicker"
+    tools:deviceIds="wear"
+    android:background="@color/blue">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TimePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/timePicker"
+                android:timePickerMode="spinner"
+                android:scaleX="1.5"
+                android:scaleY="1.5"/>
+
+            <Button
+                android:id="@+id/timePickerOkButton"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OK"/>
+        </LinearLayout>
+
+
+</android.support.wear.widget.BoxInsetLayout>

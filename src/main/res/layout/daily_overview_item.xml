@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file is used for the Daily Overview and the Select Activity Screen -->
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="1dp"
+        android:background="@color/primaryLightColor">
+        <LinearLayout android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:background="@color/primaryLightColor"
+            android:orientation="horizontal"
+
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            >
+            <ImageView
+                android:id="@+id/daily_overview_icon"
+                android:background="@color/primaryLightColor"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icn_heart_pulse"
+                android:layout_gravity="left"
+                android:layout_marginStart="35dp"
+                android:layout_marginRight="20dp"
+                android:tint="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_gravity="right"
+                android:orientation="vertical"
+                android:background="@color/primaryLightColor">
+                <TextView
+                    android:id="@+id/daily_overview_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Activity Name"
+                    android:textAppearance="@android:style/TextAppearance.Material.Widget.PopupMenu.Large"
+                    android:textSize="14sp"
+                    android:background="@color/primaryLightColor"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/primaryLightColor">
+
+                    <TextView
+                        android:id="@+id/overview_from_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TEST"
+                        android:layout_marginRight="5dp"
+                        android:background="@color/primaryLightColor"
+                        />
+                    <TextView
+                        android:id="@+id/overview_line_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:layout_marginRight="5dp"
+                        android:background="@color/primaryLightColor"
+                        />
+                    <TextView
+                        android:id="@+id/overview_to_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TEST"
+                        android:background="@color/primaryLightColor"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            >
+
+            <TextView
+                android:id="@+id/stress"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Stress" />
+
+            <TextView
+                android:id="@+id/mood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                tools:text="very positive" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

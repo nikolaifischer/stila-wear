@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context="lmu.pms.stila.config.MeasureIntervalActivity"
+    tools:deviceIds="wear">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center_horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:text="Background Color"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="30dp"
+                />
+
+            <Button
+                android:id="@+id/settings_color_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textColor="@color/white"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:text="Fonts"
+                android:layout_marginBottom="10dp"
+                />
+            <Switch
+                android:id="@+id/darkThemeSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use Light Fonts/ Hands"
+                android:textSize="11sp"
+                style="@style/Widget.Wear.RoundSwitch"
+                android:textColor="@color/white"
+                android:layout_marginBottom="40dp"/>
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.wear.widget.BoxInsetLayout>
+

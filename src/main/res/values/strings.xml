@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2017 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">WatchFace</string>
+    <string name="analog_complication">Stila Analog </string>
+    <string name="digital_name">Stila Digital</string>
+
+    <string name="digital_background_color">Background color</string>
+    <string name="digital_config_name">Digital watch face configuration</string>
+    <string name="digital_am">AM</string>
+    <string name="digital_pm">PM</string>
+
+    <string name="complications_provider_incrementing_number">Incrementing Number</string>
+
+    <string name="analog_complication_preference_file_key">lmu.pms.stila.ANALOG_COMPLICATION_PREFERENCE_FILE_KEY</string>
+    <string name="saved_marker_color">saved_markers_color</string>
+    <string name="saved_background_color">saved_background_color</string>
+    <string name="saved_unread_notifications_pref">saved_unread_notifications</string>
+
+    <!-- Use of "\n" is to conserve horizontal space in config menu. -->
+    <string name="config_marker_color_label">Marker\nColor</string>
+    <string name="config_background_color_label">Background\nColor</string>
+    <string name="config_unread_notifications_label">Unread\nNotifications</string>
+    <string name="config_background_image_complication_label">Background\nImage</string>
+
+    <!-- TODO: this should be shared (needs covering all the samples with Gradle build model) -->
+    <string name="color_black">Black</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_gray">Gray</string>
+    <string name="color_green">Green</string>
+    <string name="color_navy">Navy</string>
+    <string name="color_red">Red</string>
+    <string name="color_white">White</string>
+
+    <string name="analog_complication_config">Configure Watchface Complications</string>
+    <string name="add_complication">Add Complication</string>
+    <string name="edit_complication">Edit Complication <xliff:g example="World Clock" id="name">%1$s</xliff:g></string>
+
+    <string-array name="color_array">
+        <item>@string/color_black</item>
+        <item>@string/color_blue</item>
+        <item>@string/color_gray</item>
+        <item>@string/color_green</item>
+        <item>@string/color_navy</item>
+        <item>@string/color_red</item>
+        <item>@string/color_white</item>
+    </string-array>
+    <string name="title_activity_body_sensor_permission">BodySensorPermissionActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_stila_digital_config">StilaDigitalConfigActivity</string>
+    <string name="title_activity_measure_interval">MeasureIntervalActivity</string>
+
+
+    <!-- Stila Strings -->
+
+    <string name="stila_lower">stila</string>
+    <string name="minutes">Minutes</string>
+    <string name="complication_pick_tutorial">Click on the circles to pick a complication</string>
+    <string name="sync_interval_str">Synchronisation Interval</string>
+    <string name="config_menu_measure_interval">HR Measure Interval</string>
+    <string name="config_menu_sync_interval">Synchronisation Interval</string>
+    <string name="config_menu_watchface_style"> Watchface Style</string>
+    <string name="config_menu_complications">Complications</string>
+    <string name="broadcast_measure_hr">lmu.pms.stila.measure</string>
+
+
+    <!-- Preference Strings -->
+    <string name="heartrate_measure_interval"> HR is measured</string>
+    <string name="stila_watchface_preferences"> stila_watchface_preferences </string>
+    <string name="preference_heartrate_interval">heartrate_interval</string>
+    <string name="preference_backup_heartrate">backup_heartrate</string>
+    <string name="title_activity_synchronisaton_interval">SynchronisatonIntervalActivity</string>
+    <string name="title_activity_digital_style_config">DigitalStyleConfigActivity</string>
+    <string name="preference_sync_interval">sync_interval</string>
+    <string name="use_dark_theme">use_dark_theme</string>
+    <string name="preference_color_hue">preference_color_hue</string>
+    <string name="preference_color_brightness">preference_color_brightness</string>
+    <string name="preference_watchface_mode">preference_watchface_mode</string>
+    <string name="analog">analog</string>
+    <string name="digital">digital</string>
+
+    <string name="instant">Instant</string>
+    <string name="title_activity_digital_complication_config">DigitalComplicationConfigActivity
+    </string>
+    <string name="title_activity_analog_complication_config">AnalogComplicationConfigActivity
+    </string>
+    <string name="title_activity_add_new">AddNewActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_select">SelectActivity</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="record_earlier_lecture">Record Earlier Lecture</string>
+    <string name="cancel">Cancel</string>
+    <string name="activity_name_extra">ACTIVITYNAME</string>
+    <string name="menu_current_activity">View current Activity</string>
+    <string name="menu_add_activity">Add Activity</string>
+    <string name="title_activity_save">SaveActivity</string>
+    <string name="title_activity_time_picker">TimePickerActivity</string>
+    <string name="activity_end_time_extra">ACTIVITY_END_TIME</string>
+    <string name="activity_start_time_extra">ACTIVITY_START_TIME</string>
+    <string name="select_activity_to_track">Select an Activity to track</string>
+    <string name="record_earlier">Record earlier</string>
+    <string name="refresh_wear_overview_broadcast">lmu.pms.stila.refreshWearOverview</string>
+    <string name="very">very</string>
+    <string name="not_while_charging">Not possible while charging!</string>
+    <string name="preference_last_notification">last_notification</string>
+    <string name="flag_from_complication">flag_from_complication</string>
+    <!-- Tutorial Strings -->
+
+    <string name="tutorial_title_1">Stila</string>
+    <string name="tutorial_description_1">Scroll to continue</string>
+    <string name="tutorial_title_2">Companion</string>
+    <string name="tutorial_description_2">Please also download the Stila App on your Phone.</string>
+    <string name="tutorial_title_3">HR Sensor</string>
+    <string name="tutorial_description_3">Stila measures your Stress Levels using the heart rate sensor.</string>
+    <string name="tutorial_title_4">Settings</string>
+    <string name="tutorial_description_4">You can change the interval of HR measurements in the settings.</string>
+    <string name="tutorial_title_5">Settings</string>
+    <string name="tutorial_description_5"> Continuous measurements provide higher accuracy, while periodic measurements save battery power. The default measurement interval is 10s.</string>
+    <string name="tutorial_title_6">Watch Face</string>
+    <string name="tutorial_description_6">To measure your heart rates, use one of the Stila Watch Faces.</string>
+    <string name="tutorial_title_7">Personalize</string>
+    <string name="tutorial_description_7">Stila allows you to personalize your watch face by choosing a background color and adding complications.</string>
+    <string name="tutorial_title_8">Shortcut</string>
+    <string name="tutorial_description_8">Long Press the watch face to open the Stila App.</string>
+    <string name="tutorial_title_9">Watch Face</string>
+    <string name="tutorial_description_9">Please choose one of the Stila Watchfaces (digital or analog) in the following dialog.</string>
+    <string name="prefs_first_start">prefs_first_start</string>
+    <string name="config_menu_tutorial">Tutorial</string>
+    <string name="title_activity_wear_time_picker">WearTimePicker</string>
+
+
+</resources>

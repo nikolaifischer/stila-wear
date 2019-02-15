@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <!-- Headline with Activity Name -->
+        <LinearLayout
+            android:id="@+id/text_view_activity_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:background="@color/secondaryColor"
+            >
+            <TextView
+                android:id="@+id/textview_activity_name"
+                style="@style/wearAppTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lecture"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="10dp"
+                android:textSize="20sp"
+                android:theme="@style/wearAppTheme" />
+
+        </LinearLayout>
+
+        <!-- Time Range -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time Range"
+                style="@style/saveActivityHeadline"
+                android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    >
+                    <Button
+                        android:id="@+id/text_view_time_range_from"
+                        style="@style/TimePickerButtons"
+                        android:layout_marginRight="7dp"
+                        android:text="11:20" >
+                    </Button>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="21sp"
+                        android:textColor="@color/white"
+
+                        android:text="-"/>
+                    <Button
+                        android:id="@+id/text_view_time_range_to"
+                        style="@style/TimePickerButtons"
+                        android:text="12:30"
+                        android:layout_marginLeft="7dp"/>
+                </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Stress Level -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stress Level"
+                style="@style/saveActivityHeadline"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight=".05">
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight=".90"
+                    android:gravity="center_horizontal">
+
+
+
+                    <SeekBar
+                        android:id="@+id/stressLevelSeekBar"
+                        android:minHeight="40dp"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        android:max="4"
+                        android:min="0"
+                        android:progress="2"
+                        />
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="relaxed"
+                            android:layout_marginTop="3dp"
+                            android:paddingLeft="8dp"
+                            />
+
+                        <!--
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Neutral"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="3dp"/>
+                        -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="stressed"
+                            android:layout_marginTop="3dp"
+                            android:paddingRight="8dp"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight=".05">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Performance Level -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Performance"
+                style="@style/saveActivityHeadline"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight=".05">
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight=".90"
+                    android:gravity="center_horizontal">
+
+
+
+                    <SeekBar
+                        android:id="@+id/performanceSeekBar"
+                        android:minHeight="40dp"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        android:max="4"
+                        android:progress="2"
+                        />
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="bad"
+                            android:layout_marginTop="3dp"
+                            android:paddingLeft="8dp"
+                            />
+
+                        <!--
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Neutral"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="3dp"/>
+                        -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="good"
+                            android:layout_marginTop="3dp"
+                            android:paddingRight="8dp"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight=".05">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Pleasant Level -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Circumstance"
+                style="@style/saveActivityHeadline"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight=".05">
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight=".90"
+                    android:gravity="center_horizontal">
+
+
+
+                    <SeekBar
+                        android:id="@+id/valenceSeekBar"
+                        android:minHeight="40dp"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        android:max="4"
+                        android:progress="2"
+                        />
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="very unpleasant"
+                            android:layout_marginTop="3dp"
+                            android:paddingLeft="8dp"
+                            />
+
+                        <!--
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Neutral"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="3dp"/>
+                        -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="very pleasant"
+                            android:layout_marginTop="3dp"
+                            android:paddingRight="8dp"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight=".05">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Feeling -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feeling"
+                style="@style/saveActivityHeadline"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_negative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Negative"
+                    android:textColor="@color/white"
+                    android:onClick="onRadioButtonClicked"
+                    />
+                <RadioButton android:id="@+id/radio_neutral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Neutral"
+                    android:onClick="onRadioButtonClicked"
+                    />
+                <RadioButton android:id="@+id/radio_positive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Positive"
+                    android:onClick="onRadioButtonClicked"
+                    />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- Posture -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posture"
+                style="@style/saveActivityHeadline"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_lying"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Lying"
+                    android:textColor="@color/white"
+                    android:onClick="onRadioButtonClicked"
+                    />
+                <RadioButton android:id="@+id/radio_sitting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Sitting"
+                    android:onClick="onRadioButtonClicked"
+                    />
+                <RadioButton android:id="@+id/radio_standing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Standing"
+                    android:onClick="onRadioButtonClicked"
+                    />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- Experience -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Experience"
+                style="@style/saveActivityHeadline"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_threatening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Threatening"
+                    android:textColor="@color/white"
+                    android:onClick="onRadioButtonClicked"
+                    />
+                <RadioButton android:id="@+id/radio_neutral_experience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Neutral"
+                    android:onClick="onRadioButtonClicked"
+                    />
+                <RadioButton android:id="@+id/radio_challenging"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Challenging"
+                    android:onClick="onRadioButtonClicked"
+                    />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- Drugs Intake -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drug-Intake"
+                style="@style/saveActivityHeadline"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/nradio_medikation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Medication"
+                    android:textColor="@color/white"
+                    android:onClick="onRadioButtonClicked"
+                    />
+                <RadioButton android:id="@+id/radio_none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="None"
+                    android:onClick="onRadioButtonClicked"
+                    />
+                <RadioButton android:id="@+id/radio_caffeine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:buttonTint="@android:color/white"
+                    android:text="Caffeine"
+                    android:onClick="onRadioButtonClicked"
+                    />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- Save Button -->
+        <ImageButton
+            android:id="@+id/button_save_activity"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_save_white"
+            android:background="@color/secondaryColor"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"/>
+    </LinearLayout>
+
+</ScrollView>

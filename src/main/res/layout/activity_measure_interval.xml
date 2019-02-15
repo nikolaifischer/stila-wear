@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context="lmu.pms.stila.config.MeasureIntervalActivity"
+    tools:deviceIds="wear">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_continuous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:buttonTint="@android:color/white"
+                android:text="continuous"
+                android:textColor="@color/white"
+                android:onClick="onRadioButtonClicked"
+                />
+            <RadioButton android:id="@+id/radio_often"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:buttonTint="@android:color/white"
+                android:text="every 5 seconds"
+                android:onClick="onRadioButtonClicked"
+               />
+            <RadioButton android:id="@+id/radio_periodically"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:buttonTint="@android:color/white"
+                android:text="every 10 seconds"
+                android:onClick="onRadioButtonClicked"
+                />
+            <RadioButton android:id="@+id/radio_never"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:buttonTint="@android:color/white"
+                android:text="never"
+                android:onClick="onRadioButtonClicked"
+                />
+        </RadioGroup>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.wear.widget.BoxInsetLayout>
+

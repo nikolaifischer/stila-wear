@@ -1,0 +1,60 @@
+
+<android.support.wear.widget.drawer.WearableDrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/start_activity_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.wear.widget.BoxInsetLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textview_activity_name"
+                style="@style/wearAppTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lecture"
+                android:textSize="15sp"
+                android:theme="@style/wearAppTheme" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_start_activity"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_play_arrow_white_24dp" />
+
+            <TextView
+                style="@style/wearAppTheme"
+                android:id="@+id/textview_started_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                android:textSize="17sp"
+                android:theme="@style/wearAppTheme" />
+
+
+        </LinearLayout>
+
+    </android.support.wear.widget.BoxInsetLayout>
+
+    <android.support.wear.widget.drawer.WearableActionDrawerView
+        android:id="@+id/start_activity_bottom_action_drawer"
+        style="@style/WearableDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:actionMenu="@menu/start_activity_menu"
+        app:showOverflowInPeek="true" />
+</android.support.wear.widget.drawer.WearableDrawerLayout>

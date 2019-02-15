@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context="lmu.pms.stila.config.MeasureIntervalActivity"
+    tools:deviceIds="wear">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+   >
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/sync_interval_str"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        />
+
+
+    <SeekBar
+        android:id="@+id/configSyncSeekBar"
+        android:minHeight="40dp"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:max="120"
+
+        />
+
+    <TextView
+        android:id="@+id/configSyncProgressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/configSyncMinutesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minutes"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
+
+
+</android.support.wear.widget.BoxInsetLayout>
+

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ Copyright (C) 2017 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+--><!--
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="lmu.pms.stila.wear">
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="lmu.pms.stila">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="25" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <!-- Required to act as a cusicn_watchatch face. -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Required for complications to receive complication data and open the provider chooser. -->
+    <uses-permission android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/stila_ic_launcher_round"
+        android:label="Stila"
+        android:theme="@style/wearAppTheme"
+        tools:replace="android:allowBackup">
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <activity android:name="android.support.wearable.complications.ComplicationHelperActivity" />
+
+<service
+    android:name=".watchface.StilaDigitalWatchFaceService"
+    android:label="@string/digital_name"
+    android:permission="android.permission.BIND_WALLPAPER">
+    <meta-data
+        android:name="android.service.wallpaper"
+        android:resource="@xml/watch_face" />
+    <meta-data
+        android:name="com.google.android.wearable.watchface.preview"
+        android:resource="@drawable/preview_digital_circular" />
+    <meta-data
+        android:name="com.google.android.wearable.watchface.preview_circular"
+        android:resource="@drawable/preview_digital_circular" />
+    <meta-data
+        android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+        android:value="lmu.pms.stila.CONFIG_DIGITAL" />
+
+    <intent-filter>
+        <action android:name="android.service.wallpaper.WallpaperService" />
+        <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
+    </intent-filter>
+</service>
+        <service
+            android:name=".watchface.StilaAnalogWatchFaceService"
+            android:label="Stila Analog"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face" />
+            <!-- TODO: Preview für quadratische Displays erstellen -->
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/preview_analog" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/preview_analog_circular" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+                android:value="lmu.pms.stila.CONFIG_DIGITAL" />
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
+            </intent-filter>
+        </service>
+        <service android:name=".communication.DataLayerListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+
+                <data
+                    android:host="*"
+                    android:pathPrefix="/wear"
+                    android:scheme="wear" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- listeners receive events that match the action and data filters -->
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
+
+                <data
+                    android:host="*"
+                    android:pathPrefix="/wear"
+                    android:scheme="wear" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".provider.ComputedStressComplicationProvider"
+            android:icon="@drawable/icn_complications"
+            android:label="My Stress Levels (Beta)"
+            android:permission="com.google.android.wearable.permission.BIND_COMPLICATION_PROVIDER">
+            <intent-filter>
+                <action android:name="android.support.wearable.complications.ACTION_COMPLICATION_UPDATE_REQUEST" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.wearable.complications.SUPPORTED_TYPES"
+                android:value="SHORT_TEXT" />
+            <meta-data
+                android:name="android.support.wearable.complications.UPDATE_PERIOD_SECONDS"
+                android:value="300" />
+            <meta-data
+                android:name="android.support.wearable.complications.SAFE_WATCH_FACES"
+                android:value="
+         lmu.pms.stila/lmu.pms.stila.watchface.StilaAnalogWatchFaceService,
+          lmu.pms.stila/lmu.pms.stila.watchface.StilaDigitalWatchFaceService,
+          lmu.pms.stila"/>
+        </service>
+
+        <!--
+             All intent-filters for config actions must include the categories
+            com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION
+            and android.intent.category.DEFAULT.
+        -->
+
+
+        <!--
+        activity
+            android:name=".config.StilaDigitalWearableConfigActivity"
+            android:label="@string/digital_config_name">
+            <intent-filter>
+                <action android:name="lmu.pms.stila.CONFIG_DIGITAL" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity
+        -->
+
+
+        <!-- STILA DIGITAL CONFIGURATION ACTIVITY -->
+
+        <service android:name=".communication.HeartrateSyncJobService">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".util.BodySensorPermissionActivity"
+            android:label="@string/title_activity_body_sensor_permission"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".config.MeasureIntervalActivity"
+            android:label="@string/title_activity_measure_interval" />
+        <activity
+            android:name=".config.SynchronisatonIntervalActivity"
+            android:label="@string/title_activity_synchronisaton_interval" />
+        <activity
+            android:name=".config.StyleConfigActivity"
+            android:label="@string/title_activity_digital_style_config">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".config.DigitalComplicationConfigActivity"
+            android:label="@string/title_activity_digital_complication_config">
+            <intent-filter>
+                <action android:name="lmu.pms.stila.watchface.CONFIG_COMPLICATION" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".config.AnalogComplicationConfigActivity"
+            android:label="@string/title_activity_digital_complication_config">
+            <intent-filter>
+                <action android:name="lmu.pms.stila.watchface.CONFIG_COMPLICATION" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="Stila">
+            <intent-filter>
+                <action android:name="lmu.pms.stila.CONFIG_DIGITAL" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.SelectActivity"
+            android:label="@string/title_activity_select" />
+        <activity
+            android:name=".ui.StartNewActivity"
+            android:label="@string/title_activity_start" />
+        <activity
+            android:name=".ui.SaveActivity"
+            android:label="@string/title_activity_save" />
+        <activity android:name="android.support.wearable.activity.ConfirmationActivity" />
+
+        <service
+            android:name=".smartNotifications.BigTextIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".smartNotifications.NotificationAlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="lmu.pms.stila.notificationBroadcast" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:label="OnboardingActivity" />
+        <activity
+            android:name=".ui.WearTimePicker"
+            android:label="@string/title_activity_wear_time_picker">
+        </activity>
+    </application>
+
+</manifest>
